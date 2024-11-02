@@ -29,7 +29,7 @@ luffy.do(() => {
 
     videoSources.forEach(({ src, parentNode }) => {
       let once = false;
-      const m3u8 = src; // ":scope > source" is not well-supported
+      const m3u8 = src;
       const oldVideo = parentNode;
       const newVideo = oldVideo.cloneNode(true);
       const allSources = newVideo.querySelectorAll("source");
