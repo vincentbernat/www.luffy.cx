@@ -6,7 +6,7 @@
     "autoprefixer": "~10.4.20",
     "baguettebox.js": "~1.11.0",
     "cssnano": "~7.0.6",
-    "hls.js": "^1.4.12",
+    "hls.js": "^1.5.17",
     "katex": "~0.16.11",
     "less": "~4.2.0",
     "postcss": "~8.4.47",
