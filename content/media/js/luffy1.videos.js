@@ -13,13 +13,13 @@ luffy.do(() => {
           if (target != ovideo && !ovideo.paused) ovideo.pause();
         });
       },
-      false
+      false,
     );
   };
   allVideos().forEach(pauseOthersWhenPlaying);
 
   const videoSources = document.querySelectorAll(
-    "video.lf-media source[type='application/vnd.apple.mpegurl']"
+    "video.lf-media source[type='application/vnd.apple.mpegurl']",
   );
   if (videoSources.length == 0) return;
 

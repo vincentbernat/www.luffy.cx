@@ -4,7 +4,7 @@ luffy.do(() => {
   // Don't do anything if there is no comment
   const el = document.getElementById("isso-thread");
   const links = document.querySelectorAll(
-    '#lf-bottomlinks a[href="#isso-thread"]'
+    '#lf-bottomlinks a[href="#isso-thread"]',
   );
   if (!el) return;
 

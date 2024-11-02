@@ -1,7 +1,7 @@
 luffy.do(() => {
   if (
     !document.querySelector(
-      "video.lf-media source[type='application/vnd.apple.mpegurl']"
+      "video.lf-media source[type='application/vnd.apple.mpegurl']",
     )
   )
     return;
