@@ -68,15 +68,15 @@ ConditionIPExpr "condition on IP" ←
 ```
 
 The rule identifier is `ConditionIPExpr`. It case-insensitively matches
-`ExporterAddress`, `SrcAddr`, or `DstAddr`. The action for each case returns the
-proper case for the column name. That's what is stored in the `column` variable.
-Then, it matches one of the possible operators. As there is no code block, it
-stores the matched string directly in the `operator` variable. Then, it tries to
-match the `IP` rule, which is defined elsewhere in the grammar. If it succeeds,
-it stores the result of the match in the `ip` variable and executes the final
-action. The action turns the column, operator, and IP into a proper expression
-for *ClickHouse*. For example, if we have `ExporterAddress = 203.0.113.15`, we
-get `ExporterAddress = IPv6StringToNum('203.0.113.15')`.
+`ExporterAddress`, `SrcAddr`, or `DstAddr`. For each of them, it returns the the
+column name with the proper case. That's what is stored in the `column`
+variable. Then, it matches one of the possible operators. As there is no code
+block, it stores the matched string directly in the `operator` variable. Then,
+it tries to match the `IP` rule, which is defined elsewhere in the grammar. If
+it succeeds, it stores the result of the match in the `ip` variable and executes
+the final action. The action turns the column, operator, and IP into a proper
+expression for *ClickHouse*. For example, if we have `ExporterAddress =
+203.0.113.15`, we get `ExporterAddress = IPv6StringToNum('203.0.113.15')`.
 
 The `IP` rule uses a rudimentary regular expression but checks if the matched
 address is correct in the action block, thanks to `netip.ParseAddr()`:
