@@ -29,7 +29,7 @@ l10n:
   attachment: "Attachment:"
   attachments: "Attachments:"
   tags: "Filed under"
-  range: "–"                    # en dash
+  range: " – "                    # en dash surrounded by thin spaces
   sources: "Sources"
   site: "Site"
   page: "Page"
