@@ -18,11 +18,16 @@ can extend its functionality through [plugins][][^plugins] to add features like
 [^plugins]: This article uses the term "plugins," though Caddy documentation
     also refers to them as "modules" since they are implemented as Go modules.
 
-While *Caddy* is available in [Nixpkgs][], adding extra plugins is not simple.
-The compilation process needs Internet access, which [Nix denies during build][]
-to ensure [reproducibility][]. When trying to build the following derivation
-using [xcaddy][], a tool for building Caddy with plugins, it fails with this
-error: `dial tcp: lookup proxy.golang.org on [::1]:53: connection refused`.
+While *Caddy* is available in [Nixpkgs][], adding extra plugins is not
+simple.[^simple] The compilation process needs Internet access, which [Nix
+denies during build][] to ensure [reproducibility][]. When trying to build the
+following derivation using [xcaddy][], a tool for building Caddy with plugins,
+it fails with this error: `dial tcp: lookup proxy.golang.org on [::1]:53:
+connection refused`.
+
+[^simple]: This is a [feature request][] since quite some time. A [proposed
+    solution][] has been rejected. The one described in this article is a bit
+    different.
 
 ```nix
 { pkgs }:
@@ -147,3 +152,5 @@ Check out the complete example in the [GitHub repository][]. To integrate into a
 [flake]: https://zero-to-nix.com/concepts/flakes "Zero to Nix: flakes"
 [outputhash]: https://nix.dev/manual/nix/2.22/language/advanced-attributes.html#adv-attr-outputHash
 [github repository]: https://github.com/vincentbernat/caddy-nix/blob/main/examples/xcaddy-src/flake.nix
+[feature request]: https://github.com/NixOS/nixpkgs/issues/14671 "caddy: add all addons #14671"
+[proposed solution]: https://github.com/NixOS/nixpkgs/pull/317881 "caddy: add support for compiling with Caddy modules (plugins) #317881"
