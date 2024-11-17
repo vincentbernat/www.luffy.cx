@@ -142,6 +142,10 @@ surcouche à *Nixpkgs* :
 }
 ```
 
+!!! "Mise à jour (11.2024)" Cela ne fonctionne pas avec Nixpkgs 24.05 car [cette
+modification](https://github.com/nixOS/nixpkgs/commit/eed069a5bc40ba4d871de7700c7eb8d592e98cb6)
+est nécessaire pour pouvoir changer la valeur de l'attribut `vendorHash`.
+
 [caddy]: https://caddyserver.com/ "Caddy Web Server"
 [plugins]: https://caddyserver.com/docs/modules/ "All registered Caddy plugins"
 [rate limiting]: https://github.com/mholt/caddy-ratelimit "HTTP rate limiting module for Caddy"

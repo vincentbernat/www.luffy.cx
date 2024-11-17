@@ -140,6 +140,11 @@ Check out the complete example in the [GitHub repository][]. To integrate into a
 }
 ```
 
+!!! "Update (2024-11)" This flake won't work with Nixpkgs 24.05 or older because
+it relies on [this
+commit](https://github.com/nixOS/nixpkgs/commit/eed069a5bc40ba4d871de7700c7eb8d592e98cb6)
+to properly override the `vendorHash` attribute.
+
 [caddy]: https://caddyserver.com/ "Caddy Web Server"
 [plugins]: https://caddyserver.com/docs/modules/ "All registered Caddy plugins"
 [rate limiting]: https://github.com/mholt/caddy-ratelimit "HTTP rate limiting module for Caddy"
