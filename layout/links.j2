@@ -10,6 +10,9 @@
 {% if resource.meta.mastodon %}
     <a href="https://toot.kytta.dev?text={{title}}: {{ url }} via {{ resource.meta.mastodon }}">Mastodon</a>,
 {% endif %}
+{% if resource.meta.bluesky %}
+    <a href="https://bsky.app/intent/compose?text={{title}}: {{ url }} via @{{ resource.meta.bluesky }}">Bluesky</a>,
+{% endif %}
 {% if resource.meta.twitter %}
     <a href="https://twitter.com/intent/tweet?url={{url}}&text={{title}}&via={{ resource.meta.twitter }}">Twitter</a>,
 {% endif %}
