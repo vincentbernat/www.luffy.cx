@@ -100,7 +100,9 @@
 {% if resource.meta.mastodon %}
         <li><a href="{{ resource.meta.mastodon|mastodon_href }}">Mastodon</a></li>
 {% endif %}
-        <li><a href="https://twitter.com/{{ resource.meta.twitter }}">Twitter</a></li>
+{% if resource.meta.bluesky %}
+        <li><a href="https://bsky.app/profile/{{ resource.meta.bluesky }}">Bluesky</a></li>
+{% endif %}
       </ul>
     </div>
 {% endif %}
