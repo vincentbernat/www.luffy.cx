@@ -52,7 +52,7 @@ def thumb(self, defaults={}, width=None, height=None):
     elif height is None:
         # width is not None
         height = im.size[1] * width // im.size[0] + 1
-    im.thumbnail((width, height), Image.LANCZOS)
+    im.thumbnail((width, height), Image.Resampling.LANCZOS)
     # Prepare path
     path = os.path.join(
         os.path.dirname(self.get_relative_deploy_path()),
@@ -156,7 +156,9 @@ class ImageFixerPlugin(Plugin):
                 # Find a dominant color
                 reduced = img.copy()
                 reduced.thumbnail((150, 150))
-                paletted = reduced.convert("P", palette=Image.ADAPTIVE, colors=8)
+                paletted = reduced.convert(
+                    "P", palette=Image.Palette.ADAPTIVE, colors=8
+                )
                 palette = paletted.getpalette()
                 color_counts = sorted(paletted.getcolors(), reverse=True)
                 palette_index = color_counts[0][1]
@@ -290,7 +292,9 @@ class ImageFixerPlugin(Plugin):
             # Destination is more recent, assume size is correct
             return
         im = Image.open(source)
-        im = im.resize((int(im.width * factor), int(im.height * factor)), Image.LANCZOS)
+        im = im.resize(
+            (int(im.width * factor), int(im.height * factor)), Image.Resampling.LANCZOS
+        )
         File(destination).parent.make()
         if source.endswith(".jpg"):
             im.save(destination, "JPEG", optimize=True, quality=95)
