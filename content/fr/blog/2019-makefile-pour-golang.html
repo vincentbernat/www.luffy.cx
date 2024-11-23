@@ -132,6 +132,15 @@ utilisé par défaut est `golint` tel que construit par le premier bloc.
 Mais il est possible d'outrepasser ceci avec `make
 GOLINT=/usr/bin/golint`.
 
+!!! "Mise à jour (11.2024)" Actuellement, l'[approche recommandée][recommended
+approach] consiste à créer un fichier `tools.go` qui importe les paquets
+contenant les outils pour gérer les dépendances via `go.mod`. Cette méthode
+garantit que tous les utilisateurs travaillent avec la même version des outils,
+contrairement à l'approche précédente. J'ai mis à jour le [dépôt
+d'exemple][mine] pour utiliser cette méthode. À partir de Go 1.24 (sortie prévue
+en février 2025), le fichier `go.mod` inclura une nouvelle directive `tool` pour
+[gérer nativement les dépendances des outils][tool].
+
 # Tests
 
 Voici les règles permettant d'exécuter les tests :
@@ -253,3 +262,5 @@ cependant une étape de construction non triviale.
 [Cobertura]: http://cobertura.github.io/cobertura/ "A code coverage utility for Java"
 [Reddit]: https://www.reddit.com/r/golang/comments/d04y3s/a_makefile_for_your_go_project_2019/
 [Mage]: https://magefile.org/ "Mage is a make/rake-like build tool using Go"
+[recommended approach]: https://go.dev/wiki/Modules#how-can-i-track-tool-dependencies-for-a-module
+[tool]: https://go.googlesource.com/proposal/+/54d6775ff71ccbc00c276db2a4e4841d67011cf4/design/48429-go-tool-modules.md
