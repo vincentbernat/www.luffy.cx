@@ -88,7 +88,7 @@ content, with the exception of code blocks:
 Using Claude 3.5 Sonnet, I use the following prompt, then copy/paste Markdown
 content, with the exception of code blocks:
 
-> Edit the following text, keep markdown markup, and enclode the result in a
+> Edit the following text, keep markdown markup, and enclose the result in a
 > code block. There is no need to add comments. You can include very light
 > stylistic edit but avoid using prnoun-verb contractions and keep a casual
 > tone. The target is a technical audience who may not be English-native
