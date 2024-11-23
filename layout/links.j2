@@ -7,15 +7,9 @@
   <span class="lf-sym">📢</span>
   <span>
     {{ resource.meta.l10n.share }}
-{% if resource.meta.mastodon %}
-    <a href="https://toot.kytta.dev?text={{title}}: {{ url }} via {{ resource.meta.mastodon }}">Mastodon</a>,
-{% endif %}
-{% if resource.meta.bluesky %}
-    <a href="https://bsky.app/intent/compose?text={{title}}: {{ url }} via @{{ resource.meta.bluesky }}">Bluesky</a>,
-{% endif %}
-{% if resource.meta.twitter %}
-    <a href="https://twitter.com/intent/tweet?url={{url}}&text={{title}}&via={{ resource.meta.twitter }}">Twitter</a>,
-{% endif %}
+    <a href="https://toot.kytta.dev?text={{title}}: {{ url }}{% if resource.meta.mastodon %} via {{ resource.meta.mastodon|d }}{% endif %}">Mastodon</a>,
+    <a href="https://bsky.app/intent/compose?text={{title}}: {{ url }}{% if resource.meta.bluesky %} via @{{ resource.meta.bluesky|d }}{% endif %}">Bluesky</a>,
+    <a href="https://twitter.com/intent/tweet?url={{url}}&text={{title}}{% if resource.meta.twitter %}&via={{ resource.meta.twitter|d }}{% endif %}">Twitter</a>,
     <a href="https://www.facebook.com/sharer.php?u={{url}}">Facebook</a>,
     <a href="https://www.reddit.com/submit?url={{url}}&title={{title}}">Reddit</a>,
     <a href="https://www.linkedin.com/sharing/share-offsite/?url={{url}}">LinkedIn</a>,
