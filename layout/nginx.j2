@@ -91,6 +91,7 @@ location ~ ^(?<canonical>.*)\.html$ {
 }
 location ~ ^/ping/.*$ {
   default_type image/svg+xml;
+  add_header  "Cache-Control" "private, max-age=1h";
   return 200 '<svg xmlns="http://www.w3.org/2000/svg"/>';
 }
 
