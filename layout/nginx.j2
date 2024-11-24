@@ -89,6 +89,10 @@ location ~ ^(?<canonical>.*)\.html$ {
   http2_push $canonical;
   return 301 $canonical;
 }
+location ~ ^/ping/.*$ {
+  default_type image/svg+xml;
+  return 200 '<svg xmlns="http://www.w3.org/2000/svg"/>';
+}
 
 {% for res in resource.node.walk_resources() %}
 {# handle exceptions #}
