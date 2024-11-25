@@ -26,7 +26,8 @@ compiler Caddy avec des modules supplémentaires, cela échoue avec cette erreur
 
 [^simple]: C'est une [demande][feature request] depuis un certain temps. Une
     [solution proposée][proposed solution] a été rejetée. Celle décrite dans cet
-    article est un peu différente.
+    article est un peu différente et je l'ai [proposée][pull request] en
+    remplacement.
 
 ```nix
 { pkgs }:
@@ -160,3 +161,4 @@ est nécessaire pour pouvoir changer la valeur de l'attribut `vendorHash`.
 [github repository]: https://github.com/vincentbernat/caddy-nix/blob/main/examples/xcaddy-src/flake.nix
 [feature request]: https://github.com/NixOS/nixpkgs/issues/14671 "caddy: add all addons #14671"
 [proposed solution]: https://github.com/NixOS/nixpkgs/pull/317881 "caddy: add support for compiling with Caddy modules (plugins) #317881"
+[pull request]: https://github.com/NixOS/nixpkgs/pull/358586 "caddy: add suport for compiling Caddy with plugins #358586"
