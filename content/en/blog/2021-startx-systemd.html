@@ -45,7 +45,7 @@ Here is an alternative using `startx` and a *systemd* service:
 Let me explain each block:
 
 - The unit starts after `systemd-user-sessions.service`, which enables
-  user logins after boot by removing the `/run/nologin` file.[^after]
+  user logins after boot by removing the `/run/nologin` file.
 
 - With `User=bernat`, the unit is started with the identity of the
   specified user. This implies that `Xorg` does not run with elevated
@@ -79,10 +79,6 @@ Let me explain each block:
   the loginless session is only available on boot. By default,
   `startx` runs `xinitrc`. If you want to run *Kodi* instead, add
   `/usr/bin/kodi-standalone` between `startx` and `--`.
-
-[^after]: It also runs after `graphical.target`, which means after the network
-    is ready. To speed up boot, you could replace `graphical.target` with
-    `network-pre.target`.
 
 [^moredoc]: For more information on how `logind` provides access to
     devices, see this [blog post][]. The method names do not match the

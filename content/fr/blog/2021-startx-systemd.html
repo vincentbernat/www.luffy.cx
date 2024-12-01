@@ -48,7 +48,7 @@ Voici la fonction de chaque bloc :
 
 - Le service démarre après `systemd-user-sessions.service`, qui
   autorise les utilisateurs à se connecter après le démarrage du
-  système en retirant le fichier `/run/nologin`.[^after]
+  système en retirant le fichier `/run/nologin`.
 
 - Avec `User=bernat`, le service est démarré sous l'identité de
   l'utilisateur mentionné. Cela implique que `Xorg` ne tourne pas avec
@@ -87,11 +87,6 @@ Voici la fonction de chaque bloc :
   démarrage. Par défaut, `startx` exécute `xinitrc`. Si vous voulez
   lancer *Kodi* à la placer, insérez `/usr/bin/kodi-standalone` entre
   `startx` et `--`.
-
-[^after]: Le service démarre également après `graphical.target`, ce qui le fait
-    attendre indirectement sur la bonne configuration du réseau. Pour démarrer
-    plus vite, il est possible de remplacer `graphical.target` par
-    `network-pre.target`.
 
 [^moredoc]: Pour plus d'information sur comment `logind` fournit
     l'accès aux périphériques, regardez cet [article][blog post]. Le
