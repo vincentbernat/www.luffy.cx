@@ -40,14 +40,7 @@
                   "pygments-haproxy"
                   "pygments-ios"
                   "pygments-junos"
-                ])) // {
-                pygments = super.pygments.overridePythonAttrs (old: {
-                  nativeBuildInputs = old.nativeBuildInputs or [ ] ++ [ self.hatchling ];
-                });
-                lxml = super.lxml.overridePythonAttrs (old: {
-                  buildInputs = old.buildInputs or [ ] ++ [ pkgs.zlib ];
-                });
-              }
+                ]))
             );
         };
         nodeEnv = pkgs.mkYarnModules {
