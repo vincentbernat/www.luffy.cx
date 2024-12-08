@@ -75,18 +75,15 @@ me than the other direction. As I am not a native English speaker, I am using
 LLMs to edit the English content or to translate to French. Since French is my
 mother tongue, I edit the French result myself.
 
-### Translating
+Using Claude 3.5 Sonnet, I use the following prompts, then copy/paste Markdown
+content, with the exception of code blocks.
 
-Using Claude 3.5 Sonnet, I use the following prompt, then copy/paste Markdown
-content, with the exception of code blocks:
+### Translating
 
 > Translate to French the following text, keep markdown markup, and enclose the
 > result in a code block. For links, keep the original references.
 
 ### Editing
-
-Using Claude 3.5 Sonnet, I use the following prompt, then copy/paste Markdown
-content, with the exception of code blocks:
 
 > Edit the following text, keep markdown markup, and enclose the result in a
 > code block. There is no need to add comments. You can include very light
