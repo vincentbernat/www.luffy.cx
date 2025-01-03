@@ -25,6 +25,7 @@ ignore=
  ^https://web.archive.org/web/
  ^https://sci-hub.tw/
  ^/media
+ ^/ping
 checkextern=1
 
 [checking]
