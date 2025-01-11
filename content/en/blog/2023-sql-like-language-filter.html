@@ -68,7 +68,7 @@ ConditionIPExpr "condition on IP" ←
 ```
 
 The rule identifier is `ConditionIPExpr`. It case-insensitively matches
-`ExporterAddress`, `SrcAddr`, or `DstAddr`. For each of them, it returns the the
+`ExporterAddress`, `SrcAddr`, or `DstAddr`. For each of them, it returns the
 column name with the proper case. That's what is stored in the `column`
 variable. Then, it matches one of the possible operators. As there is no code
 block, it stores the matched string directly in the `operator` variable. Then,

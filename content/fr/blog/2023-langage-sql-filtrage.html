@@ -240,16 +240,16 @@ Le système de complétion adopte une approche hybride. Il répartit le travail
 entre le frontend et le backend pour offrir ses suggestions.
 
 Le [frontend][] utilise l'analyseur construit avec *Lezer* pour déterminer le
-contexte de la complétion : s'agit-il compléter un nom de colonne, un opérateur
-ou une valeur ? Il extrait également le nom de la colonne si nous complétons
-autre chose. Il transfère le résultat au backend via le point de terminaison
-`/api/v0/console/filter/complete`. Parcourir l'arbre syntaxique n'a pas été
-aussi facile que je le pensais, mais les [tests unitaires][unit tests] ont
-beaucoup aidé.
+contexte de la complétion : s'agit-il de compléter un nom de colonne, un
+opérateur ou une valeur ? Il extrait également le nom de la colonne si nous
+complétons autre chose. Il transfère le résultat au backend via le point de
+terminaison `/api/v0/console/filter/complete`. Parcourir l'arbre syntaxique n'a
+pas été aussi facile que je le pensais, mais les [tests unitaires][unit tests]
+ont beaucoup aidé.
 
 Le [backend][] utilise l'analyseur généré par *pigeon* pour compléter les noms
 de colonnes et les opérateurs de comparaison. Pour les valeurs, les complétions
-sont statiques out extraites de la base de données *ClickHouse*. Un utilisateur
+sont statiques ou extraites de la base de données *ClickHouse*. Un utilisateur
 peut compléter un numéro AS à partir d'un nom d'organisation grâce au code
 suivant :
 
@@ -286,7 +286,7 @@ for _, result := range results {
 l'éditeur un moyen efficace de sélectionner des flux. Alors qu'un constructeur
 de requêtes aurait pu être plus convivial pour les débutants, la facilité
 d'utilisation et les fonctionnalités du système de complétion le rendent plus
-agréable à utiliser une fois que l'utilisateur familiarisé.
+agréable à utiliser une fois l'utilisateur familiarisé.
 
 *[PEG]: Parsing Expression Grammar
 *[AST]: Abstract Syntax Tree
