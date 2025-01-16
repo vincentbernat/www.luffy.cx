@@ -21,7 +21,7 @@ class TypographyPlugin(Plugin):
         filters.applyfilters = lambda text: self.owntypo(filters.smartypants(text))
         filters.process_ignores = self.process_ignores(original_process_ignores)
 
-        # Don't use widont
+        # Don't use widont: useless if we also allow hyphens.
         filters.widont = lambda t: t
 
     def process_ignores(self, orig):
