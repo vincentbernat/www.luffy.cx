@@ -182,8 +182,8 @@ le type sont codés en un seul entier de longueur variable appelé « *tag* »
 Nous utilisons les fonctions bas niveau suivantes pour construire le message
 codé :
 
-- [`protowire.AppendTag()`][protowire.AppendTag] code un « *tag* »,
-- [`protowire.AppendVarint()`][protowire.AppendVarint] code un entier,
+- [`protowire.AppendTag()`][protowire.AppendTag] code un « *tag* » ;
+- [`protowire.AppendVarint()`][protowire.AppendVarint] code un entier ;
 - [`protowire.AppendBytes()`][protowire.AppendBytes] ajoute des octets sans modification.
 
 Notre abstraction pour le schéma contient les informations appropriées pour

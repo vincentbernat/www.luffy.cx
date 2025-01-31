@@ -50,14 +50,14 @@ inclu dans la version 1.2.5.
 Voici ce que l'on peut faire avec un tel support :
 
  - récupérer la configuration complète de *Keepalived* sans avoir besoin
-   d'analyser le fichier de configuration ;
+   d'analyser le fichier de configuration ;
  - récupérer l'état de *Keepalived* (le statut des instances VRRP,
-   l'état des frontaux) sans regarder les logs ;
+   l'état des frontaux) sans regarder les logs ;
  - récupérer des statistiques sur les serveurs virtuels (nombre de
    connexions envoyées sur tel frontal) sans avoir à interpréter la
-   sortie de `ipvsadm` ;
+   sortie de `ipvsadm` ;
  - être averti en cas de changement d'état (bascule
-   VRRP ou arrêt d'un frontal) avec les traps SNMP ;
+   VRRP ou arrêt d'un frontal) avec les traps SNMP ;
  - modifier le poids d'un frontal (pour le désactiver par exemple) ou
    changer la priorité d'une instance VRRP (pour provoquer une
    bascule).

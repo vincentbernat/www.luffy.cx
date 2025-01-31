@@ -170,10 +170,10 @@ Toute la magie est située dans les fonctions appelées. Vous pouvez regarder le
 fichier [dns.ts][] dans le dépôt [cdktf-take1][] pour comprendre comment cela
 fonctionne. Rapidement :
 
-- `Route53Zone()` crée une zone sur *Route 53*,
-- `sign()` signe la zone avec une clé maître,
-- `registrar()` inscrit la zone auprès du registre de domaines et configure DNSSEC,
-- `www()` crée les enregistrements `A` et `AAAA` pour les serveurs web,
+- `Route53Zone()` crée une zone sur *Route 53* ;
+- `sign()` signe la zone avec une clé maître ;
+- `registrar()` inscrit la zone auprès du registre de domaines et configure DNSSEC ;
+- `www()` crée les enregistrements `A` et `AAAA` pour les serveurs web ;
 - `fastmailMX()` crée les enregistrements `MX` et d'autres enregistrements liés
   pour configurer *Fastmail* en tant que fournisseur de courriel.
 
@@ -454,9 +454,9 @@ outil SNMP interactif pour Python reposant sur [libsmi][], une bibliothèque C :
 
 Si *Nix* est installé sur votre système :
 
-- `nix run github:vincentbernat/snimpy` exécute *Snimpy*,
-- `nix shell github:vincentbernat/snimpy` fournit un shell avec *Snimpy* prêt à être utilisé,
-- `nix build github:vincentbernat/snimpy` construit le paquet Python,
+- `nix run github:vincentbernat/snimpy` exécute *Snimpy* ;
+- `nix shell github:vincentbernat/snimpy` fournit un shell avec *Snimpy* prêt à être utilisé ;
+- `nix build github:vincentbernat/snimpy` construit le paquet Python ;
 - `nix develop .` fournit un shell pour développer autour de *Snimpy* depuis un
   clône du dépôt[^checkout].
 

@@ -70,9 +70,9 @@ inclus dans n'importe quel project existant.
 Comme point de départ, nous allons empaqueter [memcached][], un cache
 mémoire distribué. Il nous faut créer quatre fichiers :
 
- - `debian/compat`,
- - `debian/changelog`,
- - `debian/control` et
+ - `debian/compat` ;
+ - `debian/changelog` ;
+ - `debian/control` ;
  - `debian/rules`.
 
 Le premier contient uniquement `11`[^compat] :
@@ -482,12 +482,12 @@ supplémentaires dans le paquet binaire. Pour se faire, il est possible
 d'utiliser `cp` ou encore de déclarer les fichiers à copier :
 
  - les fichiers listés dans `debian/memcached.docs` seront copiés dans
-   `/usr/share/doc/memcached` par `dh_installdocs`,
+   `/usr/share/doc/memcached` par `dh_installdocs` ;
  - les fichiers listés dans `debian/memcached.examples` seront copiés dans
-   `/usr/share/doc/memcached/examples` par `dh_installexamples`,
+   `/usr/share/doc/memcached/examples` par `dh_installexamples` ;
  - les fichiers listés dans `debian/memcached.manpages` seront copiés
    dans le sous-répertoire approprié de `/usr/share/man` par
-   `dh_installman`,
+   `dh_installman`.
 
 Voici un exemple pour `debian/memcached.docs` :
 
@@ -511,7 +511,7 @@ Le [dépôt Git][GitHub] comprend d'autres exemples. Ils suivent tous
 le même schéma et mettent en œuvre les techniques décrites dans les
 sections précédentes :
 
- - `dh_update_autotools_config` est surchargée pour télécharger et mettre en place les sources,
+ - `dh_update_autotools_config` est surchargée pour télécharger et mettre en place les sources ;
  - `dh_gencontrol` est modifiée pour fixer la version du paquet.
 
 Il y a notamment des exemples de démons en [Java][], [Go][],

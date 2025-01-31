@@ -159,22 +159,22 @@ Cette commande va afficher la table des partitions du téléphone. Il
 assez enrichissant de savoir ce qu'elle contient :
 
  - `IBL+PBL` est le boot loader, il faut donc être très prudent si on
-   tente de le modifier ;
- - `PIT` est la table des partitions ;
+   tente de le modifier ;
+ - `PIT` est la table des partitions ;
  - `EFS` contient des données importantes telles que l'EMEI du
-   téléphone ;
- - `SBL` est le second boot loader ;
- - `SBL2` est une copie du second boot loader ;
- - `PARAM` contient des images graphiques utilisées à divers moment du boot ;
- - `KERNEL` est le noyau ;
- - `RECOVERY` est une copie de sauvegarde du noyau ;
+   téléphone ;
+ - `SBL` est le second boot loader ;
+ - `SBL2` est une copie du second boot loader ;
+ - `PARAM` contient des images graphiques utilisées à divers moment du boot ;
+ - `KERNEL` est le noyau ;
+ - `RECOVERY` est une copie de sauvegarde du noyau ;
  - `FACTORYFS` contient le système de fichiers `/system` que l'on peut
-   considérer comme l'équivalent de la racine d'un système GNU/Linux ;
+   considérer comme l'équivalent de la racine d'un système GNU/Linux ;
  - `DBDATA` contient le système de fichiers `/data` qui permet de
    stocker les préférences et les paramètres du système et des
-   applications ;
+   applications ;
  - `CACHE` contient le système de fichiers `/cache` qui héberge le
-   cache de Dalvik ;
+   cache de Dalvik ;
  - `MODEM` contient le firmware du modem.
 
 Comme on le verra par la suite, Heimdall permet de flasher n'importe
@@ -199,12 +199,12 @@ Pour obtenir cet outil, il faut récupérer [le SDK d'Android][sdk].
 
 Les commandes importantes sont :
 
- - `shell` pour obtenir un shell ;
- - `reboot recovery` pour rebooter en mode *recovery* ;
- - `reboot download` pour rebooter en mode *download* ;
- - `push` pour envoyer un fichier vers le téléphone ;
- - `pull` pour récupérer un fichier ;
- - `install` pour installer une application à partir de son APK ;
+ - `shell` pour obtenir un shell ;
+ - `reboot recovery` pour rebooter en mode *recovery* ;
+ - `reboot download` pour rebooter en mode *download* ;
+ - `push` pour envoyer un fichier vers le téléphone ;
+ - `pull` pour récupérer un fichier ;
+ - `install` pour installer une application à partir de son APK ;
  - `logcat` pour consulter en temps réel les logs du téléphone, très
    utile !
 

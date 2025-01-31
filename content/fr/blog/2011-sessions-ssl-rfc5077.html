@@ -123,15 +123,15 @@ cette tâche et obtenir des statistiques intéressantes. Voici quelques
 faits extraits d'une capture de 300 000 sessions (pour 38 000 clients)
 vers un grand site de support pour un opérateur français :
 
-- 35 % des requêtes indiquent un support des tickets de session ;
+- 35 % des requêtes indiquent un support des tickets de session ;
 - 53,3 % des requêtes négocient une poignée de mains raccourcie sans
   utilisation de tickets contre 25,6 % avec les tickets, ce qui laisse
   une requête sur quatre n'est pas une reprise d'une précédente
-  session ;
-- 67,2 % des requêtes utilisent l'extension TLS [SNI][sni] ;
-- 86,7 % des requêtes utilisent TLS 1.0 ; le reste utilise SSL 3.0 ;
-  quasiment personne n'utilise TLS 1.1 ou 1.2 ;
-- en moyenne, un client effectue 8 poignées de mains ;
+  session ;
+- 67,2 % des requêtes utilisent l'extension TLS [SNI][sni] ;
+- 86,7 % des requêtes utilisent TLS 1.0 ; le reste utilise SSL 3.0 ;
+  quasiment personne n'utilise TLS 1.1 ou 1.2 ;
+- en moyenne, un client effectue 8 poignées de mains ;
 - les algorithmes supportés par tous les clients sont 3DES-SHA, RC4-MD5 et RC4-SHA.
 
 En corrélant les logs des serveurs web avec les requêtes, il est
@@ -148,7 +148,7 @@ TLS. Voici toutefois quelques grandes directions :
 
 - si le serveur utilise plusieurs processus, un cache de sessions en
   mémoire partagée (ou sur disque) est nécessaire ; concernant les
-  tickets, cela fonctionne généralement tout seul ;
+  tickets, cela fonctionne généralement tout seul ;
 - avec un répartiteur de charge local, une façon simple de contourner
   les problèmes qui peuvent survenir est de s'assurer qu'un client
   sera toujours affecté à un même frontal (avec une correspondance
@@ -158,7 +158,7 @@ TLS. Voici toutefois quelques grandes directions :
   désactiver les tickets[^1]) pour construire la table de persistance ;
 - si le conseil précédent ne vous convient pas, le cache des sessions
   doit être partagé entre plusieurs serveurs en utilisant, par exemple,
-  [memcached][memcached] ; les tickets doivent alors être désactivés ;
+  [memcached][memcached] ; les tickets doivent alors être désactivés ;
 - l'utilisation d'un répartiteur de charge global (DNS) ne nécessite
   pas, a priori, de partager un cache de sessions entre les pools
   géographiques : un client reste généralement attaché a un seul

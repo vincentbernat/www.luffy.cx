@@ -48,9 +48,9 @@ leur solution interne[^morningpaper]. Cependant, le logiciel associé n'est pas
 disponible. Fondamentalement, la construction d'une solution d'équilibrage de
 charge consiste à assembler trois composants :
 
- - routage ECMP
- - répartition L4 (sans état)
- - répartition L7 (avec état)
+ - routage ECMP ;
+ - répartition L4 (sans état) ;
+ - répartition L7 (avec état).
 
 Dans cet article, je décris une solution à multiples niveaux utilisant Linux et
 des composants open-source. Cela offre une base pour construire une couche
@@ -97,10 +97,10 @@ Il termine également les connexions TCP des clients. Cela découple l'étage de
 répartition des serveurs frontaux avec les avantages suivants :
 
  - les connexions vers les frontaux peuvent être maintenues ouvertes pour
-   réduire l'utilisation des ressources et la latence ;
+   réduire l'utilisation des ressources et la latence ;
  - les requêtes peuvent être réessayées de manière transparente en cas de
-   défaillance ;
- - les clients peuvent utiliser un protocole IP différent des serveurs ;
+   défaillance ;
+ - les clients peuvent utiliser un protocole IP différent des serveurs ;
  - les frontaux n'ont pas à se soucier de la [découverte de la MTU du
    chemin][Path MTU Discovery], des algorithmes de congestion TCP, de la gestion
    de l'[état TIME-WAIT][avoidance of the TIME-WAIT state] ou d'autres détails
@@ -318,7 +318,7 @@ entrant.
 
 Il y a deux possibilités :
 
- - répartition de charge L4 avec synchronisation des états ;
+ - répartition de charge L4 avec synchronisation des états ;
  - répartition de charge L4 avec hachage cohérent.
 
 La première option augmente la complexité et limite l'évolutivité. Nous ne

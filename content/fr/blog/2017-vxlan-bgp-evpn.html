@@ -37,7 +37,7 @@ disponibilité du multicast.
 Dans un déploiement à large échelle de VXLAN, il y a deux aspects
 cruciaux :
 
- 1. la **découverte des autres terminaisons** (VTEP) partageant les mêmes segments VXLAN,
+ 1. la **découverte des autres terminaisons** (VTEP) partageant les mêmes segments VXLAN ;
  2. la **limitation des trames « BUM »** (*broadcast, unknown unicast
     and multicast*) qui sont diffusées à l'ensemble des VTEP.
 
@@ -67,7 +67,7 @@ donnant accès.
 Il y a principalement deux types de routes qu'un VTEP peut publier à
 travers BGP EVPN :
 
- 1. les VNI dont ils disposent localement (routes de type 3),
+ 1. les VNI dont ils disposent localement (routes de type 3) ;
  2. les adresses MAC locales pour chacun des VNI (routes de type 2).
 
 Le protocole couvre également d'autres aspects des segments Ethernet
@@ -93,8 +93,8 @@ limiter le nombre de sessions BGP à configurer et maintenir.
 Par rapport aux [autres solutions pour déployer VXLAN][VXLAN & Linux],
 BGP EVPN présente trois avantages :
 
- - **interopérabilité** avec les autres constructeurs (notamment Juniper et Cisco),
- - **montée en charge** éprouvée (un routeur BGP gère plusieurs millions de routes),
+ - **interopérabilité** avec les autres constructeurs (notamment Juniper et Cisco) ;
+ - **montée en charge** éprouvée (un routeur BGP gère plusieurs millions de routes) ;
  - possibilité de mettre en place des **politiques de distribution**.
 
 Sous Linux, [FRR][] est une implémentation relativement complète de
@@ -127,8 +127,8 @@ actuellement en compte qu'IPv4.
 Avant de configurer les VTEP, nous devons configurer les
 réflecteurs. Plusieurs solutions sont possibles, dont :
 
- - *FRR*,
- - *GoBGP*, une implémentation de BGP en Go,
+ - *FRR* ;
+ - *GoBGP*, une implémentation de BGP en Go ;
  - *Juniper Junos*.
 
 Pour des raisons de fiabilité, il peut être intéressant de panacher
@@ -225,8 +225,8 @@ nous convient parfaitement dans ce rôle.
 
 De nombreux produits Juniper peuvent jouer le rôle de réflecteur, notamment :
 
- - le [Juniper QFX5100][][^qfx], un commutateur de baie,
- - le [Juniper MX240][][^mx], un routeur haut de gamme,
+ - le [Juniper QFX5100][][^qfx], un commutateur de baie ;
+ - le [Juniper MX240][][^mx], un routeur haut de gamme ;
  - le [Juniper vRR][][^vrr], une machine virtuelle embarquant *Junos*
    mais sans la possibilité de router des paquets.
 
@@ -379,7 +379,7 @@ VXLAN. La commande `vtysh` permet de vérifier ce point:
 
 Les deux points importants sont :
 
- - le VNI est 100,
+ - le VNI est 100 ;
  - le pont associé à l'interface est correctement détecté.
 
 *FRR* doit également récupérer pour chaque VXLAN les adresses MAC
@@ -426,8 +426,8 @@ VTEP, cela peut être vérifié avec `vtysh` :
 
 La commande donne les informations suivantes :
 
- - l'état de la session BGP est établie (`Established`),
- - la famille `L2VPN EVPN` est correctement publiée,
+ - l'état de la session BGP est établie (`Established`) ;
+ - la famille `L2VPN EVPN` est correctement publiée ;
  - 8 routes sont reçues du réflecteur.
 
 L'état des sessions BGP peut également être vérifié depuis les
@@ -508,7 +508,7 @@ différents démons BGP doivent en indiquer la cause.
 
 Depuis chaque VTEP, *FRR* doit envoyer :
 
- - une route de type 3 pour chaque VNI local,
+ - une route de type 3 pour chaque VNI local ;
  - une route de type 2 pour chaque adresse MAC locale.
 
 Le meilleur endroit pour vérifier les routes envoyées est l'un des
@@ -765,7 +765,7 @@ VNI locaux. La configuration est similaire à celle de *FRR* :
 Les routes générées sont très similaires à celles de *FRR*. Il y a
 toutefois ces deux différences :
 
- - sur *Junos*, le *route distinguisher* est configuré statiquement en ❶,
+ - sur *Junos*, le *route distinguisher* est configuré statiquement en ❶ ;
  - sur *Junos*, le VNI est également encodé en tant que *Ethernet tag ID*.
 
 Voici une route de type 3 envoyée par *Junos* :

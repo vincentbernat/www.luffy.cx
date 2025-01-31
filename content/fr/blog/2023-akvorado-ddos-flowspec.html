@@ -22,9 +22,9 @@ titre d'exemple, nous considérons une attaque DDoS comme une collection de flux
 sur **une minute** ciblant une **adresse IP client unique**, à partir d'un
 **port source unique** et correspondant à l'une de ces conditions :
 
-- une bande passante moyenne de 1 Gbit/s,
-- une bande passante moyenne de 200 Mbit/s lorsque le protocole est UDP,
-- plus de 20 adresses IP sources et une bande passante moyenne de 100 Mbit/s, ou
+- une bande passante moyenne de 1 Gbit/s ;
+- une bande passante moyenne de 200 Mbit/s lorsque le protocole est UDP ;
+- plus de 20 adresses IP sources et une bande passante moyenne de 100 Mbit/s ;
 - plus de 10 pays sources et une bande passante moyenne de 100 Mbit/s.
 
 Voici la requête SQL pour détecter de telles attaques au cours des 5 dernières
@@ -81,9 +81,9 @@ attack], l'autre une [attaque d'amplification DNS][DNS amplification attack] :
 Une fois détectée, il existe au moins deux façons d'arrêter l'attaque au niveau
 du réseau :
 
-- supprimer tout le trafic vers l'utilisateur ciblé (_RTBH_)
+- supprimer tout le trafic vers l'utilisateur ciblé (_RTBH_) ;
 - supprimer sélectivement les paquets correspondant aux motifs de l'attaque
-  (_Flowspec_)
+  (_Flowspec_).
 
 ## Suppression du trafic avec RTBH
 
@@ -376,7 +376,7 @@ CREATE TABLE ddos_logs (
 ) ENGINE = SummingMergeTree
 PARTITION BY toStartOfHour(TimeReceived)
 ORDER BY (TimeReceived, DstAddr, Proto, SrcPort)
-TTL toStartOfHour(TimeReceived) + INTERVAL 6 HOUR DELETE ;
+TTL toStartOfHour(TimeReceived) + INTERVAL 6 HOUR DELETE ;
 
 CREATE MATERIALIZED VIEW ddos_logs_view TO ddos_logs AS
   SELECT

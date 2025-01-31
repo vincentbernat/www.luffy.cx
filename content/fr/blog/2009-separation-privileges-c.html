@@ -254,7 +254,7 @@ En effet, dans le code ci-dessus, très peu de choses nécessitent des
 privilèges :
 
 - la fonction [`socket()`][socket] suivie de la fonction
-  [`bind()`][bind] ;
+  [`bind()`][bind] ;
 - la fonction [`fopen()`][fopen].
 
 Tous les autres appels peuvent fonctionner sans accéder au système de
@@ -493,9 +493,9 @@ root et nous attendons de recevoir les ordres du fils que nous
 exécutons. Ces ordres consistent en :
 
 - ouvrir la socket, l'associer à l'interface adéquate et placer le
-  filtre ;
-- ouvrir le fichier de logs ;
-- écrire dans le fichier de logs ;
+  filtre ;
+- ouvrir le fichier de logs ;
+- écrire dans le fichier de logs ;
 - fermer le fichier de logs.
 
 Un point important à noter est qu'il n'est pas possible depuis le fils

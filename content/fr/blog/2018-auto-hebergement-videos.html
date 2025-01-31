@@ -42,7 +42,7 @@ selon la taille de l'écran][different videos depending on the screen
 width], **adapter la vidéo à la bande passante disponible** est plus
 délicat. Il y a deux solutions :
 
- - HLS ([RFC 8216][], non normative) et
+ - HLS ([RFC 8216][], non normative) ;
  - MPEG-DASH ([ISO/IEC 23009-1:2014][]).
 
 Il s'agit de deux **protocoles de diffusion à débit adaptatif** : la
@@ -66,13 +66,13 @@ conséquent, la solution la plus compatible est actuellement *HLS*.
 
 Trois types de fichiers sont nécessaires pour diffuser des vidéos HLS :
 
- - les **segments** (encodés avec différents débits et résolutions),
- - une **liste de lecture des segments** pour chacune des variantes,
+ - les **segments** (encodés avec différents débits et résolutions) ;
+ - une **liste de lecture des segments** pour chacune des variantes ;
  - une **liste de lecture principale** énumérant les listes de lecture pour chaque variante.
 
 Deux formats sont possibles pour les segments :
 
- - MPEG-2 Transport Streams (TS) ou
+ - MPEG-2 Transport Streams (TS) ;
  - MP4 fragmenté.
 
 Les segments au format MP4 fragmenté sont supportés depuis [iOS 10][]. Ils
@@ -93,11 +93,11 @@ Peer5][Peer5's documentation] explique les commandes appropriées. J'ai
 étapes. Après l'avoir exécuté sur votre vidéo cible, vous obtenez un
 répertoire contenant :
 
- - les segments pour chaque résolution (`1080p_1_001.ts`, `720p_2_001.ts`, ...)
- - les listes de lecture pour chaque résolution (`1080p_1.m3u8`, `720p_2.m3u8`, ...)
- - la liste de lecture principale (`index.m3u8`)
- - une version MP4 (`progressive.mp4`)
- - un poster (`poster.jpg`)
+ - les segments pour chaque résolution (`1080p_1_001.ts`, `720p_2_001.ts`, ...) ;
+ - les listes de lecture pour chaque résolution (`1080p_1.m3u8`, `720p_2.m3u8`, ...) ;
+ - la liste de lecture principale (`index.m3u8`) ;
+ - une version MP4 (`progressive.mp4`) ;
+ - un poster (`poster.jpg`).
 
 Le script accepte beaucoup d'options pour modifier son
 comportement. Le drapeau `--help` permet de les lister. En le lançant
@@ -340,15 +340,15 @@ Configurer correctement [CSP][] est plutôt pénible. Pour les
 navigateurs avec support HLS natif, il suffit d'ajouter la politique
 suivante en plus de la politique existante :
 
- - `image-src https://hls-videos.sos-ch-dk-2.exo.io` pour les posters,
+ - `image-src https://hls-videos.sos-ch-dk-2.exo.io` pour les posters ;
  - `media-src https://hls-videos.sos-ch-dk-2.exo.io` pour les listes
    de lecture et les segments.
 
 Avec *hls.js*, les choses se compliquent. Idéalement, il faut ajouter
 les éléments suivants :
 
- - `worker-src blob:` pour la conversion du format vidéo en tâche de fond,
- - `media-src blob: about:` pour la lecture des segments convertis,
+ - `worker-src blob:` pour la conversion du format vidéo en tâche de fond ;
+ - `media-src blob: about:` pour la lecture des segments convertis ;
  - `connect-src https://hls-videos.sos-ch-dk-2.exo.io` pour récupérer
    les listes de lecture et les segments depuis JavaScript.
 

@@ -25,9 +25,9 @@ d'IPv6 ou d'IPv4. Regardons les différentes façons de le mettre en
 Pour illustrer les exemples qui suivent, nous utilisons la
 configuration suivante :
 
- - un **réseau IP** existant (hautement disponible et évolutif, peut-être Internet),
+ - un **réseau IP** existant (hautement disponible et évolutif, peut-être Internet) ;
  - trois ponts Linux servant de **terminaison VXLAN**
-   (*VXLAN tunnel endpoints* ou VTEP),
+   (*VXLAN tunnel endpoints* ou VTEP) ;
  - quatre **serveurs** croyant partager un segment Ethernet commun.
 
 Un tunnel VXLAN étend les segments Ethernet existants en un unique
@@ -129,8 +129,8 @@ article « [Réseaux virtuels avec VXLAN][] ».
 L'utilisation d'un réseau IP multicast comme transport pour VXLAN
 présente plusieurs avantages :
 
- - découverte automatique des autres VTEP,
- - bonne utilisation de la bande passante (les paquets sont dupliqués tardivement),
+ - découverte automatique des autres VTEP ;
+ - bonne utilisation de la bande passante (les paquets sont dupliqués tardivement) ;
  - conception décentralisée et sans contrôleur[^decentralized].
 
 [^decentralized]: Le réseau multicast sous-jacent peut cependant
@@ -267,8 +267,8 @@ est manquante. Ce programme peut interroger un registre et ajouter
 l'entrée nécessaire. Toutefois, pour une entrée L2, les notifications
 sont envoyées uniquement si les conditions suivantes sont réunies :
 
- - l'adresse MAC destination n'est pas connue,
- - il n'y a pas d'entrée pour `00:00:00:00:00:00` dans la FDB,
+ - l'adresse MAC destination n'est pas connue ;
+ - il n'y a pas d'entrée pour `00:00:00:00:00:00` dans la FDB ;
  - l'adresse MAC n'est ni multicast, ni broadcast.
 
 Ces limitations empêchent tout scénario de type « unicast avec entrées
@@ -346,9 +346,9 @@ Il n'y a pas de solution universelle.
 
 L'utilisation du **multicast** s'impose si :
 
- - vous êtes dans un environnement où le multicast est disponible,
- - vous êtes prêts à opérer (et étendre) un réseau multicast,
- - vous avez besoin du multicast et du broadcast dans les segments virtuels,
+ - vous êtes dans un environnement où le multicast est disponible ;
+ - vous êtes prêts à opérer (et étendre) un réseau multicast ;
+ - vous avez besoin du multicast et du broadcast dans les segments virtuels ;
  - vous ne disposez pas des adresses L2/L3 utilisées par les locataires.
 
 Cette solution reste valable avec plusieurs milliers de locataires si
@@ -438,8 +438,8 @@ et la signalisation.
 De plus, IPv6 n'est souvent pas implémenté dans les outils orchestrant
 VXLAN :
 
- - [Cumulus vxfld][Cumulus vxfld daemon] ne supporte pas IPv6,
- - [flannel][] n'a absolument [aucun support pour IPv6][flannel-ipv6],
+ - [Cumulus vxfld][Cumulus vxfld daemon] ne supporte pas IPv6 ;
+ - [flannel][] n'a absolument [aucun support pour IPv6][flannel-ipv6] ;
  - [libnetwork][Docker's libnetwork] pour
    *Docker* [n'a pas de support IPv6][libnetwork-ipv6] pour la partie
    VXLAN.

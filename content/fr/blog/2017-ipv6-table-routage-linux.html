@@ -77,7 +77,7 @@ prochain saut.
 La fonction [`fib6_lookup_1()`][fib6_lookup_1()] parcourt l'arbre radix en deux
 étapes :
 
- 1. parcours descendant pour localiser un candidat potentiel,
+ 1. parcours descendant pour localiser un candidat potentiel ;
  2. vérification de la validité du candidat et recherche en arrière si besoin.
 
 Voici une version légèrement simplifiée (sans routage par la source) :
@@ -298,9 +298,9 @@ IPV6 [`ip6_route_output_flags()`][ip6_route_output_flags()] :
 
 Grossièrement, la répartition du temps est la suivante :
 
- - 50% est dépensé dans le parcours de l'arbre pour la table *main*,
- - 15% est dépensé dans les verrous (IPv4 repose sur le mécanisme RCU, plus efficace),
- - 5% est dépensé dans le parcours de l'arbre pour la table *local*,
+ - 50% est dépensé dans le parcours de l'arbre pour la table *main* ;
+ - 15% est dépensé dans les verrous (IPv4 repose sur le mécanisme RCU, plus efficace) ;
+ - 5% est dépensé dans le parcours de l'arbre pour la table *local* ;
  - le reste du temps est dépensé dans l'évaluation des règles de routage (environ 100 ns)[^compileout].
 
 [^compileout]: Retirer le support des règles de routage retire effectivement ces
@@ -370,10 +370,10 @@ structures `fib_info` partagées entre les différentes entrées.
 
 Les points à retenir sont :
 
- - un noyau 4.2 ou plus récent est nécessaire pour éviter la mise en cache excessive,
+ - un noyau 4.2 ou plus récent est nécessaire pour éviter la mise en cache excessive ;
  - le temps de recherche d'une route est supérieur à IPv4 (d'un ordre de
-   grandeur),
- - l'option `CONFIG_IPV6_MULTIPLE_TABLES` implique un coût fixe de 100 ns,
+   grandeur) ;
+ - l'option `CONFIG_IPV6_MULTIPLE_TABLES` implique un coût fixe de 100 ns ;
  - l'utilisation mémoire reste raisonnable (20 Mio pour 40 000 routes).
 
 Comparé à IPv4, IPv6 dans Linux ne suscite pas le même intérêt, notamment en

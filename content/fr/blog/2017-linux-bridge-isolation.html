@@ -82,11 +82,11 @@ Après réception d'une trame Ethernet et son placement dans un tampon,
 le pilote réseau transfère ce dernier à la fonction
 `netif_receive_skb()`. Les actions suivantes sont exécutées :
 
- 1. évaluation des **programmes XDP** associés à l'interface ;
+ 1. évaluation des **programmes XDP** associés à l'interface ;
  2. copie de la trame vers les **TAP** globaux ou associés à
-    l'interface (par exemple, `tcpdump`) ;
- 3. évaluation de la **politique de réception** (configurée avec `tc`) ;
- 4. délégation de la trame à la **fonction de réception** associée à l'interface, si elle existe ;
+    l'interface (par exemple, `tcpdump`) ;
+ 3. évaluation de la **politique de réception** (configurée avec `tc`) ;
+ 4. délégation de la trame à la **fonction de réception** associée à l'interface, si elle existe ;
  5. délégation de la trame à une **fonction de protocole** (IPv4, ARP, IPv6).
 
 Pour une interface membre d'un pont, le noyau a configuré une fonction

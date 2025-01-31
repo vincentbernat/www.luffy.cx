@@ -118,8 +118,8 @@ Voyons maintenant pourquoi cet état peut devenir ennuyeux sur un
 serveur gérant de nombreuses connexions. Il y a trois aspects à
 considérer :
 
- - l'entrée prise dans la table des connexions et empêchant de **nouvelles connexions**,
- - la **mémoire** occupée par la socket dans le noyau,
+ - l'entrée prise dans la table des connexions et empêchant de **nouvelles connexions** ;
+ - la **mémoire** occupée par la socket dans le noyau ;
  - l'**usage CPU** additionnel.
 
 Le résultat de la commande `ss -tan state time-wait | wc -l` n'est pas
@@ -164,12 +164,12 @@ quadruplets**[^outgoing]. Il y a plusieurs solutions (par ordre de
 difficulté) :
 
  - utiliser **plus de ports clients** en modifiant
-   `net.ipv4.ip_local_port_range`,
+   `net.ipv4.ip_local_port_range` ;
  - utiliser **plus de ports serveurs** en configurant le serveur web
-   pour écouter sur des ports supplémentaires (81, 82, 83, ...),
+   pour écouter sur des ports supplémentaires (81, 82, 83, ...) ;
  - utiliser **plus d'IP clients** en configurant des IP
    supplémentaires sur le répartiteur de charge et en les utilisant
-   l'une après l'autre[^bind],
+   l'une après l'autre[^bind] ;
  - utiliser **plus d'IP serveurs** en configurant des IP
    supplémentaires sur le serveur web[^others].
 
@@ -412,9 +412,9 @@ dans l'état `LAST-ACK` suite à la perte du dernier segment
 _ACK_. L'hôte distant retransmet le segment _FIN_ jusqu'à ce qu'une
 des conditions suivantes se réalise :
 
- 1. expiration de l'état
- 2. réception du segment _ACK_ attendu
- 3. réception d'un segment _RST_
+ 1. expiration de l'état ;
+ 2. réception du segment _ACK_ attendu ;
+ 3. réception d'un segment _RST_.
 
 Dans tous les cas, la connexion est ensuite détruite. Si les segments
 _FIN_ ainsi envoyés sont reçus alors que l'état `TIME-WAIT` existe

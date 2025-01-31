@@ -15,12 +15,12 @@ tags:
 La mise en haute disponibilité des réseaux L2 peut se faire de
 plusieurs façons :
 
- - d'antique protocoles tels que le [Spanning Tree Protocol][],
+ - d'antique protocoles tels que le [Spanning Tree Protocol][] ;
  - des protocoles propriétaires tels que le [chassis virtuel chez
    Juniper][Juniper's virtual chassis], le
    [vPC chez Cisco][Cisco's virtual port channel] ainsi que de [nombreuses][mclag1]
-   [implémentations][mclag2] de [MC-LAG][mclag3][^mclag],
- - des protocoles standards tels que [Shortest Path Bridging Protocol][IEEE 802.1Q-2014] ou [TRILL][],
+   [implémentations][mclag2] de [MC-LAG][mclag3][^mclag] ;
+ - des protocoles standards tels que [Shortest Path Bridging Protocol][IEEE 802.1Q-2014] ou [TRILL][] ;
  - la délégation de cette problématique au réseau sous-jacent (dans le
    cas des protocoles reposant sur d'autres réseaux, tels que
    [VXLAN][]).
@@ -79,7 +79,7 @@ passerelle).
 
 En bref, pour une machine virtuelle disposant d'une adresse IPv4 :
 
- - l'hyperviseur hôte configure une route `/32` sur l'interface virtuelle,
+ - l'hyperviseur hôte configure une route `/32` sur l'interface virtuelle ;
  - cette route est distribuée aux autres hyperviseurs et routeurs via
    BGP.
 
@@ -403,7 +403,7 @@ Un dernier point à prendre en compte est la possibilité de faire du
 **routage anycast** : si une IP est publiée sur plusieurs
 hyperviseurs, deux solutions sont acceptables :
 
- - envoyer tous les flux vers un seul hyperviseur ou
+ - envoyer tous les flux vers un seul hyperviseur ;
  - répartir les flux entre les hyperviseurs.
 
 Le second choix permet d'obtenir un répartiteur de charge L3. Avec la
@@ -547,8 +547,8 @@ connexions pour ces paquets :
 
 Il faut également ajouter :
 
- - [la configuration de la table `local-out`][local-out],
- - [la configuration de la table `private`][private], and
+ - [la configuration de la table `local-out`][local-out] ;
+ - [la configuration de la table `private`][private] ;
  - [la configuration pour IPv6][ipv6][^ecmpv6].
 
 [^ecmpv6]: À noter que *BIRD* 1.6.1 est nécessaire pour faire
@@ -575,7 +575,7 @@ apprises :
 Avec de nombreuses routes, on peut se soucier de la **quantité de
 mémoire utilisée par Linux**. Elle est très raisonnable :
 
- - 128 MiB permettent de gérer 1 million de routes IPv4,
+ - 128 MiB permettent de gérer 1 million de routes IPv4 ;
  - 512 MiB permettent de gérer 1 million de routes IPv6.
 
 Les chiffres doivent être doublés pour prendre en compte la mémoire
@@ -583,7 +583,7 @@ utilisée par *BIRD*. En ce qui concerne les **temps de recherche d'une
 route**, les performances sont aussi excellentes avec IPv4 et très
 bonnes avec IPv6 :
 
- - 30 ns par recherche avec 1 million de routes IPv4,
+ - 30 ns par recherche avec 1 million de routes IPv4 ;
  - 1.25 µs par recherche avec 1 million de routes IPv6.
 
 Ainsi, l'impact de laisser la gestion d'un très grand nombre de routes

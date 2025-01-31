@@ -53,10 +53,10 @@ Ce type de tunnel IPsec se base exclusivement sur ces **politiques de sécurité
 pour décider de l'encapsulation des paquets (*policy-based VPN*). Chaque
 politique de sécurité est constituée des éléments suivants :
 
- - une *direction* (`out`, `in` ou `fwd`[^fwd]),
- - un *sélecteur* (un ensemble de critères tels que réseaux source et destination, ports, ...),
- - un *mode* (`transport` ou `tunnel`),
- - un *protocole d'encapsulation* (`esp` ou `ah`),
+ - une *direction* (`out`, `in` ou `fwd`[^fwd]) ;
+ - un *sélecteur* (un ensemble de critères tels que réseaux source et destination, ports, ...) ;
+ - un *mode* (`transport` ou `tunnel`) ;
+ - un *protocole d'encapsulation* (`esp` ou `ah`) ;
  - les adresses *source et destination* du tunnel.
 
 [^fwd]: `fwd` est utilisé pour les paquets arrivant pour une adresse non

@@ -95,9 +95,9 @@ pkgs.stdenvNoCC.mkDerivation rec {
 Avec une dérivation à sortie fixe, c'est à nous de nous assurer que la sortie
 est toujours la même :
 
-- `xcaddy` ne pas compile le programme et conserve le code source[^xcaddy]
-- nous spécifions la version de Caddy que nous voulons construire
-- nous spécifions la version de chaque module demandé
+- `xcaddy` ne pas compile le programme et conserve le code source[^xcaddy] ;
+- nous spécifions la version de Caddy que nous voulons construire ;
+- nous spécifions la version de chaque module demandé.
 
 [^xcaddy]: Ce n'est pas parfait : si le code source produit par `xcaddy` change,
     le hash changerait et la compilation échouerait.

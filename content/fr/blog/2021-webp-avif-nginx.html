@@ -153,7 +153,7 @@ Je n'ai pas détaillé mes choix pour les paramètres de qualité et il
 n'y a pas beaucoup de science là-dedans. Voici deux ressources qui
 donnent plus de détails sur AVIF :
 
- - Jake Archibald [compare WebP et AVIF avec des exemples][compares WebP and AVIF with examples],
+ - Jake Archibald [compare WebP et AVIF avec des exemples][compares WebP and AVIF with examples] ;
  - Daniel Aleksandersen [compare WebP et AVIF à la même qualité
    visuelle][compares WebP and AVIF at the same visual quality] grâce
    à DDSIM.
@@ -163,7 +163,7 @@ donnent plus de détails sur AVIF :
 Pour servir les images WebP et AVIF, il existe deux possibilités :
 
  - utiliser <picture> pour laisser le navigateur choisir le format
-   qu'il prend en charge ;
+   qu'il prend en charge ;
  - utiliser la [négociation de contenu][content negotiation] pour
    laisser le serveur envoyer le format le mieux supporté.
 
@@ -211,18 +211,18 @@ AVIF, `$webp_suffix` est défini à `.webp` tandis que `$avif_suffix`
 est la chaîne vide. Le serveur essaie de servir le premier fichier
 existant dans cette liste :
 
- - `/images/ont-box-orange@2x.jpg.webp`
- - `/images/ont-box-orange@2x.jpg`
- - `/images/ont-box-orange@2x.jpg.webp`
- - `/images/ont-box-orange@2x.jpg`
+ - `/images/ont-box-orange@2x.jpg.webp` ;
+ - `/images/ont-box-orange@2x.jpg` ;
+ - `/images/ont-box-orange@2x.jpg.webp` ;
+ - `/images/ont-box-orange@2x.jpg`.
 
 Si le navigateur prend en charge les deux formats d'image, *Nginx*
 parcourt la liste suivante :
 
- - `/images/ont-box-orange@2x.jpg.webp.avif` (il n'existe jamais)
- - `/images/ont-box-orange@2x.jpg.avif`
- - `/images/ont-box-orange@2x.jpg.webp`
- - `/images/ont-box-orange@2x.jpg`
+ - `/images/ont-box-orange@2x.jpg.webp.avif` (il n'existe jamais) ;
+ - `/images/ont-box-orange@2x.jpg.avif` ;
+ - `/images/ont-box-orange@2x.jpg.webp` ;
+ - `/images/ont-box-orange@2x.jpg`.
 
 Eugene Lazutkin [explique plus en détails comment cela
 fonctionne][explains in more details how this works]. Je n'ai présenté

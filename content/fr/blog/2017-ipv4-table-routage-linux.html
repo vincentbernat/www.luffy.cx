@@ -24,8 +24,8 @@ essentielles concernant le datagramme (addresses IP source et
 destination, interfaces, ...), cette fonction doit fournir rapidement
 une décision. Quelques unes des options possibles sont :
 
- - livraison locale (`RTN_LOCAL`),
- - routage via un intermédiaire fourni (`RTN_UNICAST`),
+ - livraison locale (`RTN_LOCAL`) ;
+ - routage via un intermédiaire fourni (`RTN_UNICAST`) ;
  - destruction sans notification (`RTN_BLACKHOLE`).
 
 Depuis la version 2.6.39, Linux stocke les routes dans un **arbre
@@ -131,11 +131,11 @@ aisées.
 
 De nombreux systèmes de routage utilisent des arbres Patricia :
 
- - [OpenBSD][patricia-openbsd]
- - [NetBSD][patricia-netbsd]
- - [FreeBSD][patricia-freebsd]
- - [GoBGP][] (via [go-radix][])
- - Linux pour [IPv6][patricia-linux], voir « [Fonctionnement de la table de routage IPv6 sous Linux][] »
+ - [OpenBSD][patricia-openbsd] ;
+ - [NetBSD][patricia-netbsd] ;
+ - [FreeBSD][patricia-freebsd] ;
+ - [GoBGP][] (via [go-radix][]) ;
+ - Linux pour [IPv6][patricia-linux], voir « [Fonctionnement de la table de routage IPv6 sous Linux][] ».
 
 ## Recherche dans un trie doublement compressé
 
@@ -189,13 +189,13 @@ Voici la représentation en mémoire de notre table de routage[^tnode] :
 
 Plusieurs structures sont utilisées :
 
- - [`struct fib_table`][struct fib_table] représente une table de routage,
- - [`struct trie`][struct trie] représente un trie,
+ - [`struct fib_table`][struct fib_table] représente une table de routage ;
+ - [`struct trie`][struct trie] représente un trie ;
  - [`struct key_vector`][struct key_vector] représente un nœud interne
-   (quand `bits` est différent de 0) ou une feuille,
+   (quand `bits` est différent de 0) ou une feuille ;
  - [`struct fib_info`][struct fib_info] contient des attributs
    partagés par plusieurs routes (comme l'adresse du prochain saut ou
-   l'interface de sortie),
+   l'interface de sortie) ;
  - [`struct fib_alias`][struct fib_alias] assure le lien entre les
    feuilles et les structures `fib_info`.
 
@@ -365,8 +365,8 @@ lignes. Quand l'adresse IP `192.168.117.55` a été configurée sur
 l'interface `eno1`, trois nouvelles routes ont été ajoutées
 automatiquement :
 
- - une route pour `192.168.117.55` pour la livraison locale en unicast,
- - une route pour `192.168.117.63` pour une livraison de type « *broadcast* »,
+ - une route pour `192.168.117.55` pour la livraison locale en unicast ;
+ - une route pour `192.168.117.63` pour une livraison de type « *broadcast* » ;
  - une route pour `192.168.117.0` pour une livraison de type « *broadcast* » vers l'adresse de réseau.
 
 Quand `127.0.0.1` est configurée sur l'interface de *loopback*, des

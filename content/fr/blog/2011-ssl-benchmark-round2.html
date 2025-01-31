@@ -27,21 +27,21 @@ TLS, ajouté par un contributeur majeur de *stud*.
 
 La plateforme matérielle utilisée reste la même :
 
- - [HP DL 380 G7][g7]
- - 6 Gio de mémoire
- - 2 × [L5630 @ 2.13GHz][l5630] (8 cœurs), pas d'*hyperthreading*
- - 2 × cartes réseau Intel 82576
- - [Spirent Avalanche 2900][avalanche]
+ - [HP DL 380 G7][g7] ;
+ - 6 Gio de mémoire ;
+ - 2 × [L5630 @ 2.13GHz][l5630] (8 cœurs), pas d'*hyperthreading* ;
+ - 2 × cartes réseau Intel 82576 ;
+ - [Spirent Avalanche 2900][avalanche].
 
 L'environnement logiciel est le suivant :
 
  - [Ubuntu Lucid][lucid] qui est livré avec une version modifiée
-   OpenSSL 0.9.8k comprenant le support d'AES-NI activé par défaut.
- - Noyau Linux 2.6.39 (250 HZ)
- - 64 bits
+   OpenSSL 0.9.8k comprenant le support d'AES-NI activé par défaut ;
+ - noyau Linux 2.6.39 (250 HZ) ;
+ - 64 bits ;
  - 1 cœur pour [HAProxy][haproxy], 2 cœurs pour les cartes réseau[^0], 4 cœurs
-   pour TLS, 1 cœur pour le système
- - limite de 100 000 descripteurs de fichiers par processus
+   pour TLS, 1 cœur pour le système ;
+ - limite de 100 000 descripteurs de fichiers par processus.
 
 [^0]: La charge induite par les transactions TLS est trop faible pour
       avoir à dédier des cœurs pour *HAProxy* et les cartes
@@ -72,9 +72,9 @@ rôle et conseille de passer à des clefs de 2048 bits :
 Enfin, les protagonistes sont :
 
  - [stud][stud], [@e207dbc5a3][e207dbc5a3], cache de 20 000 sessions,
-   queue de 1000 connexions,
+   queue de 1000 connexions ;
  - [stunnel][stunnel] 4.44, configuré avec `--disable-libwrap
-   --with-threads=pthread` ([configuration][stunnelconf]),
+   --with-threads=pthread` ([configuration][stunnelconf]) ;
  - [nginx][nginx] 1.1.4, configuré avec `--with-http_ssl_module`
    ([configuration][nginxconf]).
 

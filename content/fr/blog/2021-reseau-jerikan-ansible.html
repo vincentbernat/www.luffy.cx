@@ -29,9 +29,9 @@ pour pallier à ce manque :
 
  - **Jerikan**, un outil pour construire des fichiers de configuration
    à partir d'une *source de vérité unique* et de *modèles
-   [Jinja2][]*, ainsi que son intégration dans *GitLab*,
+   [Jinja2][]*, ainsi que son intégration dans *GitLab* ;
  - un **playbook Ansible** pour déployer ces fichiers de configuration
-   sur les équipements réseau,
+   sur les équipements réseau ;
  - les **données de configuration et les modèles** pour nos centres de
    données, aujourd'hui fermés, à San Francisco et en Corée du Sud,
    couvrant de nombreux fournisseurs (Facebook Wedge 100, Dell S4048
@@ -73,8 +73,8 @@ configuration pour chaque appareil. *Ansible* pourrait effectuer cette
 tâche, mais il présente les limitations suivantes concernant la
 compilation des modèles :
 
- - il est lent,
- - les erreurs sont difficiles à corriger[^debug],
+ - il est lent ;
+ - les erreurs sont difficiles à corriger[^debug] ;
  - la hiérarchie de recherche d'une variable est [rigide][rigid].
 
 [^debug]: *Ansible* ne fournit même pas un numéro de ligne lorsqu'il y
@@ -112,11 +112,11 @@ de vérité unique au lieu d'utiliser une base de données, comme NetBox,
 ou un mélange de base de données et de fichiers texte. Cela offre de
 nombreux avantages :
 
- - chacun peut utiliser son éditeur de texte préféré,
- - l'équipe prépare les changements dans des branches,
- - l'équipe évalue les changements en utilisant des *demandes de fusion*,
- - les demandes de fusion présentent l'impact sur les fichiers de configuration générés,
- - le retour à un état antérieur est facile,
+ - chacun peut utiliser son éditeur de texte préféré ;
+ - l'équipe prépare les changements dans des branches ;
+ - l'équipe évalue les changements en utilisant des *demandes de fusion* ;
+ - les demandes de fusion présentent l'impact sur les fichiers de configuration générés ;
+ - le retour à un état antérieur est facile ;
  - c'est rapide.
 
 !!! "Mise à jour (11.2021)" Pour un argumentaire plus détaillé sur le
@@ -217,11 +217,11 @@ sont recherchées dans les chemins suivants :
 Les variables sont limitées à un espace de noms à spécifier lors d'une
 recherche. Nous utilisons les suivants :
 
- - `system` pour les comptes, DNS, serveurs syslog, ...
- - `topology` pour les ports, interfaces, adresses IP, sous-réseaux, ...
- - `bgp` pour la configuration de BGP
- - `build` pour les modèles et les scripts de validation
- - `apps` pour les variables d'application
+ - `system` pour les comptes, DNS, serveurs syslog ;
+ - `topology` pour les ports, interfaces, adresses IP, sous-réseaux ;
+ - `bgp` pour la configuration de BGP ;
+ - `build` pour les modèles et les scripts de validation ;
+ - `apps` pour les variables d'application.
 
 Lors de la recherche d'une variable dans un espace de noms donné,
 *Jerikan* recherche un fichier YAML nommé d'après l'espace de noms
