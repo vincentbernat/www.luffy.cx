@@ -30,7 +30,7 @@
                 (x: {
                   name = x;
                   value = super."${x}".overridePythonAttrs (old: {
-                    nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ self.setuptools self.flit-core ];
+                    nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ self.setuptools self.flit-core self.hatchling ];
                   });
                 })
                 [
@@ -40,6 +40,7 @@
                   "pygments-haproxy"
                   "pygments-ios"
                   "pygments-junos"
+                  "typogrify"
                 ]))
             );
         };
