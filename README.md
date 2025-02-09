@@ -83,6 +83,10 @@ content, with the exception of code blocks.
 > Translate to French the following text, keep markdown markup, and enclose the
 > result in a code block. For links, keep the original references.
 
+It should be possible to have a [more guided prompt][], but for now, this is enough for me.
+
+[more guided prompt]: https://www.gally.net/temp/20250201sampletranslationprompt.html
+
 ### Editing
 
 > Edit the following text, keep markdown markup, and enclose the result in a
