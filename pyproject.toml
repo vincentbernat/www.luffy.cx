@@ -21,8 +21,6 @@ pygments-haproxy = {git = "https://github.com/vincentbernat/pygments-haproxy", r
 pygments-ios = {git = "https://github.com/vincentbernat/pygments-ios", rev = "master"}
 pygments-junos = {git = "https://github.com/vincentbernat/pygments-junos", rev = "master"}
 
-[tool.poetry.dev-dependencies]
-
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
