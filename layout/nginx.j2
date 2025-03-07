@@ -86,11 +86,6 @@ location ~ ^(?<canonical>.*)\.html$ {
   log_not_found off;
   return 301 $canonical;
 }
-location ~ ^/ping/.*$ {
-  default_type image/svg+xml;
-  add_header  "Cache-Control" "private";
-  return 200 '<svg xmlns="http://www.w3.org/2000/svg"/>';
-}
 
 {% for res in resource.node.walk_resources() %}
 {# handle exceptions #}
