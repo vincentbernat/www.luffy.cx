@@ -1,0 +1,69 @@
+---
+title: "Expansion automatique des alias dans Zsh"
+description: |
+   Zsh peut substituer automatiquement la valeur d'un alias pour corriger une typo
+   ou pour économiser quelques frappes de touches.
+uuid: 49986e69-2fac-4816-be24-566da9264fa7
+tags:
+  - programming-shell
+---
+
+Pour éviter les frappes superflues, [fish][fish shell] propose des abréviations
+de commandes qui se substituent après avoir appuyé sur la barre d'espace. Nous
+pouvons émuler cette fonctionnalité avec [Zsh][]:
+
+```zsh
+# Définition de abbrev-alias pour la substitution automatique des alias
+typeset -ga _vbe_abbrevations
+abbrev-alias() {
+    alias $1
+    _vbe_abbrevations+=(${1%%\=*})
+}
+_vbe_zle-autoexpand() {
+    local -a words; words=(${(z)LBUFFER})
+    if (( ${​#_vbe_abbrevations[(r)${words[-1]}]} )); then
+        zle _expand_alias
+    fi
+    zle magic-space
+}
+zle -N _vbe_zle-autoexpand
+bindkey -M emacs " " _vbe_zle-autoexpand
+bindkey -M isearch " " magic-space
+
+# Corriger des typos
+(( $+commands[git] )) && abbrev-alias gti=git
+(( $+commands[grep] )) && abbrev-alias grpe=grep
+(( $+commands[sudo] )) && abbrev-alias suod=sudo
+(( $+commands[ssh] )) && abbrev-alias shs=ssh
+
+# Économiser quelques touches
+(( $+commands[git] )) && abbrev-alias gls="git ls-files"
+(( $+commands[ip] )) && {
+  abbrev-alias ip6='ip -6'
+  abbrev-alias ipb='ip -brief'
+}
+
+# Options difficiles à se souvenir
+(( $+commands[mtr] )) && abbrev-alias mtrr='mtr -wzbe'
+```
+
+Voici une démonstration où `git ls-files` remplace `gls` après avoir appuyé sur
+la barre d'espace:
+
+![Exemple de substitution automatique gls par git ls-files]([[!!images/zsh-autoexpand.mp4]]
+"Substitution automatique de <code>gls</code> par <code>git ls-files</code>")
+
+Je n'étends pas automatiquement tous les alias. Je continue à utiliser des alias
+classiques pour modifier légèrement le comportement d'une commande ou pour
+des abréviations bien connues:
+
+```zsh
+alias df='df -h'
+alias du='du -h'
+alias rm='rm -i'
+alias mv='mv -i'
+alias ll='ls -ltrhA'
+```
+
+[fish shell]: https://fishshell.com/ "fish shell: finally, a command line shell for the 90s"
+[zsh]: https://www.zsh.org/ "Zsh website"
